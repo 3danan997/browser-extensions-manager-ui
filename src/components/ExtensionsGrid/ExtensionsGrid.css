@@ -1,0 +1,5 @@
+.extensions-grid{
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}

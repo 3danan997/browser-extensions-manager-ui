@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    padding: .5rem;
+    border: 1px solid var(--container-bg, var(--neutral-0));
+    border-radius: .5rem;
+    background: var(--container-bg, var(--neutral-0));
+    box-shadow: var(--box-shadow)
+}
+.container[data-theme='dark']{
+    background: var(--neutral-900);
+}
+.themeBtn{
+    padding: .7rem;
+    background: var(--theme-btn-bg, var(--neutral-100));
+    border: none;
+    border-radius: .5rem;
+}
+.themeBtn:hover{
+    /* background-color: var(--theme-btn-hover, var(--neutral-200)); */
+}
