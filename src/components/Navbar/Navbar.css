@@ -13,7 +13,7 @@
 
 .filter-btns > button{
     font-family: 'Noto Sans';
-    background-color: var(--filter-btn, var(--neutral-0));
+    background-color: var(--button-bg);
     padding: .375rem 1.125rem;
     margin-inline: .5rem;
     font-size: 1.125rem;
@@ -22,9 +22,24 @@
     color: var(--text-color);
     box-shadow: var(--box-shadow);
     border: 1px solid var(--card-border-color);
+    cursor: pointer;
+    transition: background-color .3s, border-color .3s;
 }
+
 .filter-btns > .clicked{
     background-color: var(--clicked-filter-btn-bg);
     color: var(--clicked-filter-btn-text);
     border-color: var(--clicked-filter-btn-bg);
+}
+
+@media (min-width:768) {
+    .filter-btns > button:hover{
+        background-color: var(--theme-btn-bg-hover, var(--neutral-300));
+        border-color: var(--theme-btn-bg-hover, var(--neutral-300));
+    }
+    
+    .filter-btns > .clicked:hover{
+        background-color: var(--red-500);
+        border-color: var(--red-500);
+    }
 }

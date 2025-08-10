@@ -2,14 +2,23 @@ import { ExtensionCard } from '../ExtensionCard/ExtensionCard'
 import './ExtensionsGrid.css'
 import type React from 'react';
 
+// Props for ExtensionsGrid
+interface Extension {
+    logo: string;
+    name: string;
+    description: string;
+    isActive?: boolean;
+}
 interface ExtensionsGridProps {
-    extensions;
+    extensions: Extension[];
     removeExtension: (name: string) => void;
     toggleActive: (name: string) => void;
 }
 
+// Grid component for the ExtensionCards
 export const ExtensionsGrid: React.FC<ExtensionsGridProps> = ({extensions, removeExtension, toggleActive}) => {
 
+    // Helper function to load the logo
     const getLogoPath = (logoName:string | undefined) => {
         if(!logoName) return '';
         try {
@@ -22,6 +31,7 @@ export const ExtensionsGrid: React.FC<ExtensionsGridProps> = ({extensions, remov
 
     return(
         <div className='extensions-grid'>
+            {/* Map all extensions to ExtensionCard components */}
             {extensions.map((extension, index: number) => 
                 <ExtensionCard 
                     logo={getLogoPath(extension.logo)}

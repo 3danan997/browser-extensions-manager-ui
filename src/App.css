@@ -1,0 +1,28 @@
+.app{
+    margin: 1.5rem 1.25rem;
+    
+}
+@media (min-width:768px) {
+    .app{
+        max-width: 90vw;
+        margin: 3vh auto;
+    }
+}
+@media (min-width:1024px) {
+    .app{
+        max-width: 80vw;
+        margin-inline: auto;
+    }
+}
+@media (min-width:1440px) {
+    .app{
+        max-width: 60vw;
+        margin-inline: auto;
+    }
+}
+@media (min-width:2560px) {
+    .app{
+        max-width: 50vw;
+        margin-inline: auto;
+    }
+}

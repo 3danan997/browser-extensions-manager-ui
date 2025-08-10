@@ -3,3 +3,12 @@
     flex-direction: column;
     gap: .75rem;
 }
+
+@media (min-width: 768px) {
+    .extensions-grid{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* Keine Änderung nötig, keine Theme-Variablen verwendet */

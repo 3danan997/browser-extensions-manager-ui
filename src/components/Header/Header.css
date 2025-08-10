@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem;
+    /* margin: 1rem; */
     padding: .5rem;
     border: 1px solid var(--container-bg, var(--neutral-0));
     border-radius: .5rem;
@@ -17,7 +17,9 @@
     background: var(--theme-btn-bg, var(--neutral-100));
     border: none;
     border-radius: .5rem;
+    cursor: pointer;
+    transition: background-color .3s;
 }
 .themeBtn:hover{
-    /* background-color: var(--theme-btn-hover, var(--neutral-200)); */
+    background-color: var(--theme-btn-bg-hover, var(--neutral-300));
 }

@@ -1,4 +1,9 @@
+/*
+  Global CSS variables and font definitions for the project.
+  Includes theme variables for light and dark mode.
+*/
 @font-face{
+  /* Noto Sans Variable Font */
   font-family: 'Noto Sans';
   src: url('./assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf') format('truetype');
   font-weight: 400 700;
@@ -6,6 +11,7 @@
   font-display: swap;
 }
 @font-face{
+  /* Noto Sans Italic Variable Font */
   font-family: 'Noto Sans';
   src: url('./assets/fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf') format('truetype');
   font-weight: 400 700;
@@ -13,6 +19,7 @@
   font-display: swap;
 }
 @font-face{
+  /* Noto Sans Regular Static Font */
   font-family: 'Noto Sans';
   src: url('./assets/fonts/static/NotoSans-Regular.ttf') format('truetype');
   font-weight: 400;
@@ -20,12 +27,14 @@
   font-display: swap;
 }
 @font-face{
+  /* Noto Sans Medium Static Font */
   font-family: 'Noto Sans';
   src: url('./assets/fonts/static/NotoSans-Medium.ttf') format('truetype');
   font-style: normal;
   font-display: swap;
 }
 @font-face{
+  /* Noto Sans Bold Static Font */
   font-family: 'Noto Sans';
   src: url('./assets/fonts/static/NotoSans-Bold.ttf') format('truetype');
   font-weight: 700;
@@ -34,6 +43,10 @@
 }
 
 :root {
+  /*
+    Light theme variables
+    Will be overwritten by dark theme
+  */
   font-family: 'Noto Sans', system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -56,7 +69,9 @@
   --text-color:var(--neutral-700);
   --container-bg:var(--neutral-0);
   --theme-btn-bg:var(--neutral-100);
-  --filter-btn:var(--neutral-0);
+  --theme-btn-bg-hover:var(--neutral-300);
+  --card-bg:var(--neutral-0);
+  --button-bg:var(--neutral-0);
   --card-border-color:var(--neutral-0);
   --clicked-filter-btn-text:var(--neutral-0);
   --clicked-filter-btn-bg:var(--red-700);
@@ -66,17 +81,24 @@
 }
 
 * {
+  /* Reset for all elements */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 [data-theme="dark"]{
+  /*
+    Dark theme variables
+    Overwrite the light theme values
+  */
   --background: var(--dark-gradient);
   --text-color: white;
   --container-bg:var(--neutral-800);
   --theme-btn-bg:var(--neutral-700);
-  --filter-btn:var(--neutral-700);
+  --theme-btn-bg-hover:var(--neutral-600);
+  --card-bg:var(--neutral-700);
+  --button-bg:var(--neutral-700);
   --card-border-color:var(--neutral-600); 
   --clicked-filter-btn-text:var(--neutral-800);
   --clicked-filter-btn-bg:var(--red-400);
@@ -84,8 +106,11 @@
   --remove-btn-border: 1px solid var(--neutral-600);
   --toggle-label:var(--neutral-600);
 }
+html{
+  min-height: 100%;
+}
 body {
-  min-height: 100vh;
+  /* Background and text color are controlled by theme variables */
   background: var(--background);
   color: var(--text-color);
 }

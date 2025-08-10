@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background: var(--filter-btn);
+    background: var(--card-bg);
     border-radius: 1rem;
-    margin-inline: 1rem;
     padding: 1rem;
     box-shadow: var(--box-shadow);
     border: 1px solid var(--card-border-color);
+    justify-content: space-between;
+    height: 180px;
 }
 
 .card-main{
@@ -35,12 +36,25 @@
 
 .remove-btn{
     font-family: 'Noto Sans';
-    background-color: var(--filter-btn, var(--neutral-0));
+    background-color: var(--button-bg);
     padding-block: .375rem;
     padding-inline: .75rem;
     border-radius: 10rem;
     border: var(--remove-btn-border);
     color: var(--text-color);
+    transition: all .3s;
+    cursor: pointer;
+}
+.remove-btn:hover{
+    background-color: var(--clicked-filter-btn-bg);
+    border-color: var(--clicked-filter-btn-bg);
+    color: var(--clicked-filter-btn-text);
+}
+.remove-btn:focus{
+    background-color: var(--button-bg);
+    border: var(--remove-btn-border);
+    color: var(--text-color);
+
 }
 
 .active-toggle{
@@ -59,6 +73,7 @@
     background-color: var(--toggle-label);
     border-radius: 1.25rem;
     transition: background-color .3s;
+    cursor: pointer;
 }
 .toggle-label::after{
     content: '';
@@ -77,4 +92,29 @@
 }
 .toggle-checkbox:checked + .toggle-label::after{
     left: 22px;
+}
+
+@media (min-width:768px) {
+    .extension-card{
+        width: calc(calc(90vw/2) - 6px);
+        height: auto;
+    }    
+}
+
+@media (min-width:1024px) {
+    .extension-card{
+        width: calc(calc(80vw/3) - 8px);   
+    }
+}
+
+@media (min-width:1440px) {
+    .extension-card{
+        width: calc(calc(60vw/3) - 8px);   
+    }
+}
+
+@media (min-width:2560px) {
+    .extension-card{
+        width: calc(calc(50vw/3) - 8px);   
+    }
 }
