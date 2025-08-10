@@ -18,15 +18,15 @@ interface ExtensionsGridProps {
 // Grid component for the ExtensionCards
 export const ExtensionsGrid: React.FC<ExtensionsGridProps> = ({extensions, removeExtension, toggleActive}) => {
 
-    // Helper function to load the logo
-    const getLogoPath = (logoName:string | undefined) => {
-        if(!logoName) return '';
-        try {
-            return new URL(logoName, import.meta.url).href
-        } catch (error) {
-            console.error(`Failed to load logo: ${logoName}`, error);
-            return ''            
-        }
+    // Dynamically import all SVGs from assets/images
+    const logos = import.meta.glob('../../assets/images/*.svg', { eager: true, import: 'default' });
+
+    // Helper function to get logo path by filename
+    const getLogoPath = (logoName: string | undefined) => {
+        if (!logoName) return '';
+        const fileName = logoName.split('/').pop();
+        const match = Object.entries(logos).find(([key]) => key.endsWith(fileName || ''));
+        return match ? match[1] as string : '';
     }
 
     return(
